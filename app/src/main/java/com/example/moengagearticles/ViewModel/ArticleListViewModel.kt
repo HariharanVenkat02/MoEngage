@@ -13,6 +13,9 @@ class ArticleListViewModel() : ViewModel() {
 
     private val _articleList = MutableLiveData<Articles>()
     val articleList: LiveData<Articles> get() = _articleList
+    // Define LiveData for API error code
+    private val _apiErrorCode = MutableLiveData<Int>()
+    val apiErrorCode: LiveData<Int> get() = _apiErrorCode
     private val apiService: ApiService = ApiService()
 
 
@@ -23,10 +26,10 @@ class ArticleListViewModel() : ViewModel() {
                 if (response.isSuccessful) {
                     _articleList.value = response.body()
                 } else {
-                    // Handle error
+                    _apiErrorCode.value = response.code()
                 }
             } catch (e: Exception) {
-                // Handle network error
+                e.printStackTrace()
             }
         }
     }

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.moengagearticles.Data.IndArticle
 import com.example.moengagearticles.Utils.ClickListerner
+import com.example.moengagearticles.Utils.handleApiError
 import com.example.moengagearticles.ViewModel.ArticleListViewModel
 import com.example.moengagearticles.databinding.BottomSheetDialogBinding
 import com.example.moengagearticles.databinding.FragmentArticleListBinding
@@ -46,6 +47,11 @@ class ArticleListFragment : Fragment(), ClickListerner {
                 articleListAdapter.setUserList(response.articles)
                 isLoading = false
             }
+        })
+        // Observe LiveData for API error code
+        viewModel.apiErrorCode.observe(viewLifecycleOwner, Observer { errorCode ->
+            // Handle API error in the fragment
+            context?.let { handleApiError(it,errorCode) }
         })
 
         // Fetch articles when the view is created
