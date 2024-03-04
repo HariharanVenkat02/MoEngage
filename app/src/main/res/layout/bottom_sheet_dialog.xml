@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/baseline_close_24" />
+
+    <ImageView
+        android:id="@+id/articleImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/articleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleImage"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:text="Is this what an early-stage slowdown looks like?"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/articleAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleTitle"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
+        android:text="By Alex Wilhelm"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/articleContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleAuthor"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:text="Hello and welcome back to our regular morning look at private companies, public markets and the gray space in between..."
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/readMoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleContent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="130dp"
+        android:text="Read More"
+        android:textSize="16sp" />
+
+</RelativeLayout>
